@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450" fill="none">
+<defs>
+  <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#c9e3d4"/><stop offset="1" stop-color="#f2efcf"/></linearGradient>
+  <linearGradient id="hill" x2="0.3" y2="1"><stop stop-color="#6a9e87"/><stop offset="1" stop-color="#3a705d"/></linearGradient>
+  <linearGradient id="front" x2="0" y2="1"><stop stop-color="#245745"/><stop offset="1" stop-color="#173f34"/></linearGradient>
+  <radialGradient id="glow"><stop stop-color="#fff7d6" stop-opacity=".8"/><stop offset="1" stop-color="#fff7d6" stop-opacity="0"/></radialGradient>
+  <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".055"/></feComponentTransfer><feBlend in="SourceGraphic" mode="soft-light"/></filter>
+  <symbol id="tree" viewBox="0 0 35 110"><path d="M17 0 4 38h8L0 65h10L0 90h15v20h4V90h16L25 65h10L23 38h8Z" fill="currentColor"/></symbol>
+</defs>
+<g filter="url(#grain)">
+<path fill="url(#sky)" d="M0 0h900v450H0z"/>
+<ellipse cx="658" cy="115" rx="215" ry="200" fill="url(#glow)"/>
+<circle cx="671" cy="100" r="33" fill="#fff5d5"/>
+<path d="m0 282 145-104 47 16 126-103 80 69 58-25 110 88 68-35 140 39 126-85v308H0Z" fill="#a3c1a7"/>
+<path d="m0 330 84-67 78 20 104-85 46 43 47-14 116 76 81-100 33 19 48-89 78 105 35-21 150 92v141H0Z" fill="#86ac92"/>
+<path d="m510 212 46-9 33 19 48-89-18 63-20 3-8 35-20-9-19 4Z" fill="#c5d5b3" opacity=".6"/>
+<path d="M0 355c130-59 145-30 244-48 83-15 135-63 222-40 120 32 142 103 252 46 73-39 139-64 182-49v186H0Z" fill="url(#hill)"/>
+<path d="M0 371c149-59 309 70 434 16 157-67 235-7 327-23 51-8 105-46 139-58v144H0Z" fill="#3b7560"/>
+<path d="M581 305c-16 22-9 29 22 41 34 13 23 21-8 37-59 30-99 32-97 67h38c-13-28 35-34 73-58 39-25 54-45 4-59-23-6-32-15-29-28Z" fill="#c0ccb0" opacity=".55"/>
+<g color="#346852"><use href="#tree" x="749" y="254" width="30" height="99"/><use href="#tree" x="775" y="270" width="27" height="87"/><use href="#tree" x="794" y="236" width="35" height="120"/><use href="#tree" x="826" y="255" width="30" height="103"/><use href="#tree" x="853" y="223" width="34" height="130"/></g>
+<path d="M0 369c101-27 166-30 260 18 95 47 165 39 229 63H0ZM671 450c57-43 133-71 229-63v63Z" fill="url(#front)"/>
+<g color="#215342"><use href="#tree" x="339" y="308" width="27" height="100"/><use href="#tree" x="364" y="327" width="22" height="82"/><use href="#tree" x="389" y="302" width="28" height="113"/><use href="#tree" x="858" y="293" width="38" height="146"/></g>
+<path d="m732 103 7-3 6 2m-32 30 5-3 7 2" stroke="#63846c" stroke-width="2" stroke-linecap="round"/>
+</g></svg>
