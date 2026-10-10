@@ -1,3 +1,4 @@
+import { normalizeReadingNotes } from "./reading.js";
 import { normalizeResources } from "./resources.js";
 const DAY_MS = 24 * 60 * 60 * 1000;
 const DEFAULT_HABITS = [
@@ -61,6 +62,7 @@ export function createInitialState(now = new Date()) {
     goalDays: 30,
     goalText: "",
     resources: [],
+    readingNotes: {},
     startDate: localDateKey(now),
     checkins: [],
     habits: DEFAULT_HABITS.map((habit) => ({ ...habit })),
@@ -130,6 +132,7 @@ export function normalizeState(saved) {
     name: text(saved.name, initial.name, 80),
     goalText: text(saved.goalText, "", 200),
     resources: normalizeResources(saved.resources),
+    readingNotes: normalizeReadingNotes(saved.readingNotes),
     goalDays:
       Number.isInteger(saved.goalDays) &&
       saved.goalDays >= 1 &&

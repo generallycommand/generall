@@ -11,7 +11,8 @@
     "test": "node --test src/lib/*.test.js",
     "test:e2e": "node scripts/smoke.mjs",
     "test:offline": "node scripts/offline-smoke.mjs",
-    "test:resources": "node scripts/resources-smoke.mjs"
+    "test:resources": "node scripts/resources-smoke.mjs",
+    "test:reading": "node scripts/reading-smoke.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",

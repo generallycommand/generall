@@ -3089,3 +3089,25 @@ footer > span {
 .resource-confirm { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; padding-top: 14px; }
 a:focus-visible, select:focus-visible { outline: 3px solid #98cdb7; outline-offset: 3px; }
 @media (max-width: 850px) { .resources-layout { grid-template-columns: minmax(0, 1fr); } }
+.reading-module { grid-column: 1 / -1; min-width: 0; }
+.reading-module h2 { display: flex; align-items: center; gap: 10px; margin-top: 8px; }
+.reading-intro { line-height: 1.9; max-width: 900px; color: #52675d; }
+.reading-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+.reading-card { padding: 26px; min-width: 0; }
+.reading-card p { line-height: 1.85; margin: 10px 0; }
+.reading-card h3 { font-size: 19px; margin: 18px 0; }
+.reading-card h4 { margin: 20px 0 0; font-size: 13px; }
+.reading-kind { display: inline-block; border-radius: 20px; padding: 6px 10px; background: #f6eddd; color: #725b30; margin-right: 10px; font-size: 12px; }
+.reading-kind.medical { background: #e2f0eb; color: #246652; }
+.reading-evidence { padding: 13px; background: #f4f6f4; border-radius: 10px; font-size: 12px; }
+.reading-evidence strong { display: block; }
+.reading-card details { margin-top: 20px; border-block: 1px solid var(--border); padding: 15px 0; font-size: 12px; }
+.reading-card summary { cursor: pointer; font-weight: 600; }
+.reading-card a { color: #20624f; overflow-wrap: anywhere; }
+.reading-card a svg { margin-left: 6px; }
+.reading-reflection { margin-top: 18px; }
+.reading-reflection .button-row { flex-wrap: wrap; align-items: center; margin-top: 10px; }
+.reading-action { display: flex; gap: 10px; margin: 20px 0; line-height: 1.8; cursor: pointer; }
+.reading-action input { width: 18px; height: 18px; flex-shrink: 0; margin-top: 4px; accent-color: #267963; }
+.reading-action small { display: block; color: #65776c; margin-top: 5px; }
+@media (max-width: 850px) { .reading-grid { grid-template-columns: minmax(0, 1fr); } .reading-module > .section-heading { align-items: start; flex-direction: column; gap: 10px; } }

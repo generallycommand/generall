@@ -1,8 +1,9 @@
+import ReadingCards from "./ReadingCards.jsx";
 import { useState } from "react";
 import { BookOpen, Link, Plus, ShieldCheck, Trash2 } from "lucide-react";
 import { safeSourceUrl } from "./lib/resources.js";
 
-export default function ResourcesPage({ resources, onChange, notify }) {
+export default function ResourcesPage({ resources, onChange, notify, readingNotes, onReadingChange }) {
   const [title, setTitle] = useState("");
   const [url, setUrl] = useState("");
   const [category, setCategory] = useState("待核实");
@@ -16,9 +17,10 @@ export default function ResourcesPage({ resources, onChange, notify }) {
       <span className="eyebrow">YOUR READING SPACE</span>
       <h2>资料目录 · 由你选择阅读什么</h2>
       <p>收藏值得回看的来源，给每一条信息留出核实的空间。</p>
-      <div className="resource-status"><ShieldCheck size={20} /><div><strong>戒色吧获取：尚未接入</strong><p>是否指百度贴吧公开帖子，仍待确认。目前仅保存你填写的链接；不会获取帖子、登录账号或自动同步。</p></div></div>
+      <div className="resource-status"><ShieldCheck size={20} /><div><strong>戒色吧资料：静态整理 · 非实时获取</strong><p>已确认来源为百度贴吧戒色吧公开讨论。本次能读取公开目录，所选原帖正文返回 403；只保留已核实标题和链接，不伪造全文摘要。没有实时抓取、账号登录或自动同步。</p></div></div>
       <p className="small">社区经验不等于医学证据。普通性欲不是失败，本工具不评判你，也不声称禁欲能治病。</p>
     </section>
+    <ReadingCards notes={readingNotes} onChange={onReadingChange} notify={notify} />
     <section className="card resource-form">
       <h3><Plus size={18} /> 添加来源链接</h3>
       <form onSubmit={event => {

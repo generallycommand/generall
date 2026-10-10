@@ -1,6 +1,6 @@
 // This module stores bookmarks only. It never fetches a URL or creates a proxy.
 export const PUBLIC_SOURCE_PROVIDER = Object.freeze({
-  id: "tieba-public", enabled: false, status: "awaiting-confirmation",
+  id: "tieba-public", enabled: false, status: "static-curation-only",
 });
 
 export function safeSourceUrl(value) {

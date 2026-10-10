@@ -862,7 +862,7 @@ export default function App() {
     ],
     progress: ["每一步，都算数", "记录不是为了完美，而是看见自己真实的成长。"],
     tools: ["慢下来，回到自己", "当冲动出现时，先给自己一点时间和空间。"],
-    resources: ["为自己，留一份阅读目录", "手动收藏 · 来源可追溯 · 资料获取尚未接入"],
+    resources: ["为自己，留一份阅读目录", "静态学习卡 · 证据范围可见 · 思考留在本机"],
     settings: ["让清醒，更适合你", "按照自己的节奏，安排好每一天。"],
   };
   return (
@@ -1517,7 +1517,7 @@ export default function App() {
             />
           )}
 
-          {page === "resources" && <ResourcesPage resources={state.resources} onChange={resources => setState(value => ({ ...value, resources }))} notify={notify} />}
+          {page === "resources" && <ResourcesPage readingNotes={state.readingNotes} onReadingChange={readingNotes => setState(value => ({ ...value, readingNotes }))} resources={state.resources} onChange={resources => setState(value => ({ ...value, resources }))} notify={notify} />}
 
           {page === "settings" && (
             <div className="settings-layout">
@@ -1601,7 +1601,7 @@ export default function App() {
                   <ShieldCheck size={20} />
                 </div>
                 <p className="section-subtitle">
-                  自定目标、资料目录、偏好、行为积分、学习进度和每日记录都会自动保存在当前浏览器。更换电脑、移动本地网页或清理浏览器数据前，请先导出备份，之后可导入恢复。
+                  自定目标、阅读思考、行动选择、资料目录、偏好、行为积分、学习进度和每日记录都会自动保存在当前浏览器。更换电脑、移动本地网页或清理浏览器数据前，请先导出备份，之后可导入恢复。
                 </p>
                 <p className="small muted local-save-status" aria-live="polite">
                   {storageError
@@ -1698,7 +1698,7 @@ export default function App() {
       {modal === "reset" && (
         <Modal title="要清除所有记录吗？" onClose={() => setModal(null)}>
           <p className="modal-description">
-            打卡、目标、资料目录、偏好、习惯、积分和学习进度将恢复初始状态，无法撤销。建议先导出一份记录。
+            打卡、目标、阅读思考、行动选择、资料目录、偏好、习惯、积分和学习进度将恢复初始状态，无法撤销。建议先导出一份记录。
           </p>
           <div className="button-row">
             <button

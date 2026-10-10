@@ -13,7 +13,7 @@ try {
   await page.goto(base);
   await expect(page.locator('.quote-card')).toHaveCount(0);
   await nav('资料目录');
-  await expect(page.getByText('戒色吧获取：尚未接入')).toBeVisible();
+  await expect(page.getByText('戒色吧资料：静态整理 · 非实时获取')).toBeVisible();
   await expect(page.getByText('这里还没有资料')).toBeVisible();
   await page.screenshot({ path: 'test-results/resources-desktop.png', fullPage: true });
   await page.getByLabel('资料标题').fill('自动化测试来源');
