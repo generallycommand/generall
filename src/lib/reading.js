@@ -3,6 +3,20 @@ export const READING_ACCESS_DATE = "2026-10-10"; // UTC
 export const FORUM_DIRECTORY = "https://tieba.baidu.com/mo/q/f?ie=utf-8&jump_tieba_native=1&kw=%E6%88%92%E8%89%B2";
 export const READING_CARDS = [
   {
+    id: "six-years-reflection", theme: "反思与经验", kind: "个人经验 · 已读第一页", title: "觉察注意力，给挫折后的调整留位置",
+    sourceTitle: "戒色6年的一些体会", url: "https://tieba.baidu.com/p/9536769292", publisher: "百度贴吧 · 戒色吧",
+    accessedAt: "2026-10-11",
+    scope: "仅阅读公开第一页返回的可见正文；未读取后续分页、图片或展开折叠内容，不代表已读全帖",
+    summary: "作者自述曾经历挫折，重视觉察念头，并主张从中反思调整，不把一次中断视为彻底失败。这是个人经验，不能证明方法对所有人有效。",
+    distinctions: [
+      { label: "价值观点", text: "作者将觉察与持续练习视为重要目标；你可以选择是否认同，不必接受整套价值判断。" },
+      { label: "未经证实的健康或宗教主张", text: "文中宗教解释及关于疾病恢复的转述，未在该页提供可核查的临床证据；不据此宣称禁欲或修心能治病，也不替代医疗。" },
+    ],
+    boundary: "应用改写：可以注意到念头，再自主决定注意力去向；不要求念头立即消失，不以性欲评判好坏。挫折后的复盘是选择，不是惩罚。",
+    prompt: "原创思考：注意力偏离时，我愿意把它带回哪件小事？一次计划中断后，可以调整哪个条件？",
+    action: "自愿试做：停一小会儿，留意当下注意力，再选择继续、换一件小事或休息；不舒服就停止。",
+  },
+  {
     id: "small-steps", theme: "积累与行动", kind: "观点线索", title: "把积累变成可观察的小事",
     sourceTitle: "相信积累的力量", url: "https://tieba.baidu.com/p/11092027036", publisher: "百度贴吧 · 戒色吧",
     scope: "仅公开目录标题；原帖正文返回 403，未读全文", directory: FORUM_DIRECTORY,
@@ -16,7 +30,7 @@ export const READING_CARDS = [
     sourceTitle: "戒色反思贴3", url: "https://tieba.baidu.com/p/11093575641", publisher: "百度贴吧 · 戒色吧",
     scope: "仅公开目录标题；原帖正文返回 403，未读全文", directory: FORUM_DIRECTORY,
     summary: "公开目录有一条以反思为题的帖子。没有读取到经历细节，不能确认作者遇到过什么、做过什么或结果如何；这里不编造经验故事。",
-    boundary: "个人经验栏目目前只有待读线索，没有已核实的吧友经历。即使将来读到个人见证，也不能单凭先后发生证明因果。",
+    boundary: "这条帖子的个人经历仍待核实。即使将来读到个人见证，也不能单凭先后发生证明因果。",
     prompt: "原创思考：我实际观察到了什么？哪些只是猜测？还有哪些解释？不必填写私密细节。",
     action: "自愿试做：写下一条可观察的事实，以及一项仍不确定的解释。",
   },

@@ -10,8 +10,15 @@ page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>{if(/^https?
 const navigate=label=>page.getByRole('navigation',{name:'主导航'}).getByRole('button',{name:label,exact:true}).click();
 try {
  await page.goto(base);await navigate('资料目录');
- await expect(page.locator('.reading-card')).toHaveCount(5);
+ await expect(page.locator('.reading-card')).toHaveCount(6);
  await expect(page.locator('.reading-evidence').filter({hasText:'未读全文'})).toHaveCount(3);
+ const newCard = page.getByRole('article', {name:'觉察注意力，给挫折后的调整留位置'});
+ await expect(newCard.getByText('价值观点',{exact:true})).toBeVisible();
+ await expect(newCard.getByText('未经证实的健康或宗教主张',{exact:true})).toBeVisible();
+ await expect(newCard.locator('.reading-evidence')).toContainText('仅阅读公开第一页');
+ await newCard.getByText('来源与访问日期',{exact:true}).click();
+ await expect(newCard.getByText(/访问日期 2026-10-11/)).toBeVisible();
+ await expect(newCard.getByRole('link',{name:'戒色6年的一些体会'})).toHaveAttribute('href','https://tieba.baidu.com/p/9536769292');
  const card=page.getByRole('article',{name:'把积累变成可观察的小事'});
  await card.getByText('来源与访问日期',{exact:true}).click();
  await expect(card.getByRole('link',{name:'相信积累的力量'})).toHaveAttribute('href','https://tieba.baidu.com/p/11092027036');
@@ -38,7 +45,7 @@ try {
  await page.setViewportSize({width:390,height:844});await expect(page.locator('.sidebar')).toHaveAttribute('inert','');
  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
  await page.screenshot({path:'test-results/reading-mobile.png',fullPage:true});
- await context.setOffline(true);await page.getByRole('button',{name:'反思与经验',exact:true}).click();await expect(page.locator('.reading-card')).toHaveCount(1);
+ await context.setOffline(true);await page.getByRole('button',{name:'反思与经验',exact:true}).click();await expect(page.locator('.reading-card')).toHaveCount(2);
  assert.deepEqual(errors,[]);assert.deepEqual(external,[]);
  console.log('PASS: source disclosures, themed filtering, local notes and voluntary actions, reload, export/import, per-card and full reset, mobile layout, offline reading, zero external requests.');
 } finally {await browser.close();}
